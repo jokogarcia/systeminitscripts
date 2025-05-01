@@ -1,0 +1,5 @@
+#!/bin/bash
+git clone https://github.com/EDUGO-AI/$1.git $2
+
+#To create symlinks:
+#sudo ln -s /home/work/scripts/* /usr/local/bin/

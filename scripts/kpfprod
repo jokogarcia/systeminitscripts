@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+  echo "Error: Name is required."
+  echo "Usage: ./kpfprod <name> [localport] [remoteport]"
+  exit 1
+fi
+
+localport=${2:-9229}  # Default to 9229 if $2 is not provided
+remoteport=${3:-$localport}  # Default to 9229 if $2 is not provided
+
+
+
+kubectl port-forward -n prod deployment/$1 $localport:$remoteport
